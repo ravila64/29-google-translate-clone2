@@ -1,0 +1,8 @@
+$ npm install openai -E --force
+// error eslint vers eslint@8.57.0
+// conflicto
+
+
+// revisar eslint
+// 
+

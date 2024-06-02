@@ -1,0 +1,7 @@
+// dice mudidev
+que el dispatch no se vea en nuestros componentes
+27.34
+// cambio que se hizo en app.tsx
+
+setFromLanguage('es')
+//dispatch({type: 'SET_FROM_LANGUAGE', payload:'es'})

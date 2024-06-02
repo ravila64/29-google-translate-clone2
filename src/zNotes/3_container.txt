@@ -1,0 +1,2 @@
+ <Container fluid>  {/* Ajusta al ancho */}
+ 

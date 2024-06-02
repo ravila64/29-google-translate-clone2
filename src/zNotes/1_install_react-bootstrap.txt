@@ -1,0 +1,11 @@
+utilizar react-bootstrap
+$npm install react-bootstrap bootstrap
+
+view this link.  
+https://react-bootstrap.netlify.app/docs/getting-started/introduction
+
+for use,  example
+import { Button } from 'react-bootstrap';
+
+CSS, App.jsx or App.tsx
+import 'bootstrap/dist/css/bootstrap.min.css';

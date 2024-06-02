@@ -1,0 +1,53 @@
+ "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+  //  "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+    "test": "vitest"
+  },
+
+
+  "devDependencies": {
+
+    "@eslint/compat": "^1.0.1",
+    "@eslint/js": "^9.3.0",
+
+    // deje estas 2
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.7",
+    
+    "globals": "^15.3.0",
+    "typescript-eslint": "^7.11.0",
+
+  }
+
+  // sale este eror en dependencias
+  npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! While resolving: 29-google-translate-clone@0.0.0
+npm ERR! Found: eslint@9.4.0
+npm ERR! node_modules/eslint
+npm ERR!   dev eslint@"^9.3.0" from the root project
+npm ERR! Could not resolve dependency:
+npm ERR! peer eslint@"^8.56.0" from @typescript-eslint/parser@7.11.0
+npm ERR! node_modules/@typescript-eslint/parser
+npm ERR!   dev @typescript-eslint/parser@"^7.2.0" from the root project
+npm ERR!   peer @typescript-eslint/parser@"^7.0.0" from @typescript-eslint/eslint-plugin@7.11.0
+npm ERR!   node_modules/@typescript-eslint/eslint-plugin
+npm ERR!     dev @typescript-eslint/eslint-plugin@"^7.2.0" from the root project
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! For a full report see:
+npm ERR! C:\Users\Servidor\AppData\Local\npm-cache\_logs\2024-05-31T23_42_17_894Z-eresolve-report.txt
+npm ERR! A complete log of this run can be found in: C:\Users\Servidor\AppData\Local\npm-cache\_logs\2024-05-31T23_42_17_894Z-debug-0.log
+
+
+// se quito de package-lock.json
+"devDependencies"{
+        "@eslint/compat": "^1.0.1",
+        "@eslint/js": "^9.3.0",
+        "globals": "^15.3.0",
+        "typescript-eslint": "^7.11.0",
+}
+

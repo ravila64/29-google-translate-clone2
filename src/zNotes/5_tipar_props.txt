@@ -1,0 +1,20 @@
+// ejemplo de tipar las props
+interface Props {
+  onChange: (languaje: string) => void
+}
+
+export const LanguageSelector = ({ onChange }: Props) => {
+    return()
+}
+
+// opcion 2, logicamente ts
+import { type FC } from 'react';
+// tambien se puede declarar
+import { type FunctionComponent} from 'react';
+
+...
+export const LanguageSelector:FC<Props> = ({ onChange }) => {
+  return ()
+}  
+
+FC= quiere decir FUNCTION COMPONENT

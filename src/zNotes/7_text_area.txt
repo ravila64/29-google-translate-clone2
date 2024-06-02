@@ -1,0 +1,4 @@
+as='textarea'  // que elemento va a renderizar
+revisar : NO ME ESTA DEJANDO CAPTURAR EL TEXTO EN EL 1ER textarea
+se esta mostarndo caracter x caracter en la segunda textarea
+

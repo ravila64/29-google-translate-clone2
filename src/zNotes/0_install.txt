@@ -1,0 +1,151 @@
+INSTALACION
+$ npm create vite@latest
+? Project name: » 29-google-translate-clone
+? Project name: ... 29-google-translate-clone
+? Select a framework: » - Use arrow-keys. Return to submit.
+>   Vanilla
+    Vue
+    React
+    Preact
+    Lit
+    Svelte
+    Solid
+    Qwik
+    Others
+
+? Select a framework: » - Use arrow-keys. Return to submit.
+    Vanilla
+>   Vue
+    React
+    Preact
+    Lit
+    Svelte
+    Solid
+    Qwik
+    Others
+? Select a framework: » - Use arrow-keys. Return to submit.
+    Vanilla
+    Vue
+>   React
+    Preact
+    Lit
+    Svelte
+    Solid
+    Qwik
+    Others
+? Select a framework: » React
+? Select a variant: » - Use arrow-keys. Return to submit.
+>   TypeScript
+    TypeScript + SWC
+    JavaScript
+    JavaScript + SWC
+    Remix ?
+
+? Select a variant: » - Use arrow-keys. Return to submit.
+    TypeScript
+>   TypeScript + SWC
+    JavaScript
+    JavaScript + SWC
+    Remix ?
+? Select a variant: » TypeScript + SWC
+
+Scaffolding project in L:\CURSO REACT DESDE CERO-MIDULIVE\aprendereact\projects\29-google-translate-clone...
+
+Done. Now run:
+
+  cd 29-google-translate-clone
+  npm install
+  npm run dev
+
+*******************
+
+$ npx eslint --init
+You can also run this command directly using 'npm init @eslint/config'.
+? How would you like to use ESLint? · problems
+? What type of modules does your project use? ...
+> JavaScript modules (import/export)
+Servidor@Servidor MINGW64 /l/CURSO REACT DESDE CERO-MIDULIVE/aprendereact/projects/29-google-translate-clone
+$ npx eslint --init
+You can also run this command directly using 'npm init @eslint/config'.
+? The React plugin doesn't officially support ESLint v9 yet. What would you like to do? · 9.x
+
+? Does your project use TypeScript? ...
+? Where does your code run? · browser
+The config that you've selected requires the following dependencies:
+
+eslint@9.x, globals, @eslint/js, typescript-eslint, eslint-plugin-react, @eslint/compat
+? Would you like to install them now? » No / Yes
+? Would you like to install them now? · No / Yes
+? Which package manager do you want to use? · npm
+??Installing...
+
+despues instalar
+instale opcion --force
+npm install @vitejs/plugin-react-swc --force
+
+modificar
+.eslintrc.cjs
+
+quedando asI:
+module.exports = {
+  root: true,
+  env: { 
+    browser: true, 
+    es2021: true },
+  extends: [
+    'plugin:react/recommended',
+    'standard-with-typescript',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+  ],
+  overrides:[
+  ],
+  parserOptions:{
+    ecmaVersion: 'latest',
+    sourceType:'module',
+    project:'./tsconfig-json'
+  },
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
+  plugins: [
+    'react-refresh',
+    'react'
+  ],
+   rules: {
+    '@typescript-eslint/explicit-function-return-type':'off',
+    'react/react-in-jsx-scope':'off',
+    'react-refresh/only-export-components': [
+      'warn',
+      { allowConstantExport: true },
+    ],
+  },
+}
+**
+cambiar tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "useDefineForClassFields": true,
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+**

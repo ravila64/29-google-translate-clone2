@@ -1,0 +1,14 @@
+<Container fluid>
+        <h1>Google Translate</h1>
+        <Row>
+          <Col><h2>From</h2>
+            {fromLanguage}
+          </Col>
+          <Col>
+            <Button variant='link' disabled={fromLanguage === AUTO_LANGUAGE} onClick={interchangeLanguages}>
+              <ArrowsIcon />
+            </Button>
+          </Col>
+          <Col><h2>To</h2>{toLanguage}</Col>
+        </Row>
+</Container>
