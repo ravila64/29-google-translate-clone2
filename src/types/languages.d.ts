@@ -6,7 +6,8 @@ import {type AUTO_LANGUAGE, type SUPPORTED_LANGUAGES } from '../constants'
 
 export type Language= keyof typeof SUPPORTED_LANGUAGES
 export type AutoLanguage = keyof typeof AUTO_LANGUAGE
-export type FromLanguage = Language | AutoLanguage
+//export type FromLanguage = Language | AutoLanguage
+export type FromLanguage = keyof typeof SUPPORTED_LANGUAGES | AUTO_LANGUAGE
 
 // tipos types.d=definition
 export interface State {

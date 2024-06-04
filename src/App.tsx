@@ -1,15 +1,14 @@
-import { Container, Row, Col, Form, Stack } from 'react-bootstrap'
-import { Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { useEffect } from 'react'
+import { Button, Col, Container, Row, Stack } from 'react-bootstrap'
 import './App.css'
-import { useStore } from './hooks/useStore'
-import { AUTO_LANGUAGE } from './constants'
 import { ArrowsIcon } from './components/Icons'
 import { LanguageSelector } from './components/LanguageSelector'
-import { SectionType } from './types/languages.d'
 import { TextArea } from './components/TextArea'
-import { useEffect } from 'react'
+import { AUTO_LANGUAGE } from './constants'
+import { useStore } from './hooks/useStore'
 import { translate } from './services/translate'
+import { SectionType } from './types/languages.d'
 
 function App() {
   const {
@@ -31,6 +30,7 @@ function App() {
     if (fromText==='') return
     translate({fromLanguage, toLanguage, text: fromText})
     .then(result=>{
+      // (result===null || result===undefined ) es igual (result==null)
       if(result==null) return
       setResult(result)
     })

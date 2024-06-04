@@ -1,12 +1,11 @@
 // this is one reducer 
 import { useReducer } from "react"
-import { type State, type Action } from "../types/languages.d"
-import { type FromLanguage, type Language } from "../types/languages.d"
 import { AUTO_LANGUAGE } from "../constants.ts"
+import { type Action, type FromLanguage, type Language, type State } from "../types/languages.d"
 
 // 1. create a initialState
 const initialState: State = {
-  fromLanguage: 'es',   // quite 'auto'
+  fromLanguage: 'auto', 
   toLanguage: 'en',
   fromText: '',
   result: '',
@@ -20,20 +19,42 @@ const initialState: State = {
       // logica del estado dentro del reducer
       // lo evitamos en los componentes
       if(state.fromLanguage===AUTO_LANGUAGE) return state
-
-      return { ...state, fromLanguage: state.toLanguage, toLanguage: state.fromLanguage }
+      return { ...state, 
+        fromLanguage: state.toLanguage, 
+        toLanguage: state.fromLanguage 
+      }
     }
   
     if (type === 'SET_FROM_LANGUAGE') {
-      return { ...state, fromLanguage: action.payload }
+      if(state.fromLanguage===action.payload) return state
+      const loading = state.fromText !==''
+      return { 
+        ...state, 
+        fromLanguage: action.payload,
+        result:'',
+        loading
+      }
     }
   
     if (type === 'SET_TO_LANGUAGE') {
-      return { ...state, fromText: action.payload }
+      if(state.toLanguage===action.payload) return state
+      const loading = state.fromText !==''
+      return { 
+        ...state, 
+        fromText: action.payload,
+        result:'',
+        loading
+      }
     }
   
     if (type === 'SET_FROM_TEXT') {
-      return { ...state, loading: false, result: action.payload }
+      const loading = action.payload !==''
+      return { 
+        ...state, 
+        loading, 
+        FormText: action.payload,
+        result:''
+      }
     }
   
     if (type === 'SET_RESULT') {
