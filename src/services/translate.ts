@@ -1,6 +1,5 @@
 //import { ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from 'openai'
 //import OpenAI from 'https://deno.land/x/openai@v4.47.2/mod.ts'
-//import OpenAI from 'openai';
 import {
   ChatCompletionRequestMessageRoleEnum,
   Configuration,
@@ -64,9 +63,9 @@ export async function translate({
     },
   ];
 
-  const fromCode =
-    fromLanguage === "auto" ? "auto" : SUPPORTED_LANGUAGES[fromLanguage];
-  const toCode = SUPPORTED_LANGUAGES[toLanguage];
+  const toCode = SUPPORTED_LANGUAGES[toLanguage]
+  const fromCode = fromLanguage === "auto" ? "auto" : toCode
+  //const fromCode = fromLanguage === "auto" ? "auto" : SUPPORTED_LANGUAGES[fromLanguage]
 
   const completion = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",

@@ -1,0 +1,20 @@
+Ejecutar Typescript utilizando ts.node
+Para comenzar, instala ts-node globalmente usando: 
+npm install -g ts-node
+ 
+ts-node no incluye el compilador TypeScript, si debes instalarlo escribe:
+npm install -g typescript
+ 
+Para ejecutar el script main.ts, ejecuta
+
+ts-node main.ts
+// main.ts
+console.log("Hello world");
+ 
+Un ejemplo de uso sería:
+
+$ ts-node main.ts
+Hello world
+
+// no me funcionio este compilador con un programa inicial.ts en scr/test.
+// elimine paquetes con npm -globalmente

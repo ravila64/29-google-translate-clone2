@@ -18,8 +18,11 @@ const initialState: State = {
     if (type === 'INTERCHANGE_LANGUAGES') {
       // logica del estado dentro del reducer
       // lo evitamos en los componentes
+      const loading = state.fromText !==''
       if(state.fromLanguage===AUTO_LANGUAGE) return state
       return { ...state, 
+        loading,
+        result:'',
         fromLanguage: state.toLanguage, 
         toLanguage: state.fromLanguage 
       }
