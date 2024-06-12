@@ -1,0 +1,2 @@
+averiguar sobre vite mocks
+https://vitest.dev/guide/mocking

@@ -1,0 +1,25 @@
+apuntes test
+0. montar
+$npm install vitest happy-dom @testing-library/react @testing-library/user-event
+1. crear un App.test.tsx, en la raiz /src
+2. en vite.config.ts, se arreglo reference and test:environment
+
+/// <reference types="vitest"/>
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+// https://vitejs.dev/config/
+// mas facil simular un dom que un navegador
+export default defineConfig({
+  plugins: [react()],
+  test: {
+    environment: 'happy-dom'
+  }
+})
+
+3. agregar package.json
+    "scripts":{
+    linea de codigo,
+    "test"."vitest"
+    }
+4. ejecutar npm run test
+
